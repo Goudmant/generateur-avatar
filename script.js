@@ -2,7 +2,7 @@ window.onload = function()
     {
 
         // HEAD
-        let x = 7; // number of heads 
+        let x = 6; // number of heads 
         let avatarHead = new Image();
         let avatarHeadNum= Math.floor(Math.random()*x)+1;
         let avatarHeadName = "assets/head/head" + avatarHeadNum + ".png";
@@ -44,7 +44,7 @@ window.onload = function()
         avatarBackhair.src=avatarBackhairName;
 
         // CLOTHING 
-        let t = 9, //number of Clothings
+        let t = 9; //number of Clothings
         let avatarClothing = new Image();
         let avatarClothingNum = Math.floor(Math.random()*t)+1;
         let avatarClothingName = "assets/clothing/clothing" + avatarClothingNum + ".png";
@@ -110,19 +110,19 @@ window.onload = function()
             ctx.drawImage(avatarHead, ((1000-avatarHead.width)/2),125); // center elements horizontally - x axis, then y axis
 
             // DRAW HAIR
-            ctx.drawImage(avatarHair, ((1000-avatarHair.width)/2),50);
+            ctx.drawImage(avatarHair, ((1000-avatarHair.width)/2),40);
             
             // DRAW EYES
-            ctx.drawImage(avatarEyes, ((1000-avatarEyes.width)/2),200); 
+            ctx.drawImage(avatarEyes, ((1000-avatarEyes.width)/2),300); 
         
             // DRAW MOUTH
             ctx.drawImage(avatarMouth, ((1000-avatarMouth.width)/2),500);
             
             //DRAW NOSE
-            ctx.drawImage(avatarNose, ((1000-avatarNose.width)/2),300);
+            ctx.drawImage(avatarNose, ((1000-avatarNose.width)/2),350);
 
             // DRAW CLOTHING
-            ctx.drawImage(avatarClothing, ((1000-avatarClothing.width)/2),650);
+            ctx.drawImage(avatarClothing, ((1000-avatarClothing.width)/2),710);
 
         }
     }
