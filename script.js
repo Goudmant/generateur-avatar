@@ -5,21 +5,21 @@ window.onload = function()
         let x = 3; // number of heads 
         let avatarHead = new Image();
         let avatarHeadNum= Math.floor(Math.random()*x)+1;
-        let avatarHeadName = "head" + avatarHeadNum + ".png";
+        let avatarHeadName = "assets/head/head" + avatarHeadNum + ".png";
         avatarHead.src=avatarHeadName;
 
         // EYES
         let y = 3; // number of pair of eyes 
         let avatarEyes = new Image();
         let avatarEyesNum= Math.floor(Math.random()*y)+1;
-        let avatarEyesName = "eyes" + avatarEyesNum + ".png";
+        let avatarEyesName = "assets/eyes/eyes" + avatarEyesNum + ".png";
         avatarEyes.src=avatarEyesName;
 
         // MOUTH
         let z = 3; // number of mouths
         let avatarMouth = new Image();
         let avatarMouthNum= Math.floor(Math.random()*z)+1;
-        let avatarMouthName = "mouth" + avatarMouthNum + ".png";
+        let avatarMouthName = "assets/mouth/mouth" + avatarMouthNum + ".png";
         avatarMouth.src=avatarMouthName;            
 
         // HEAD LOADED
