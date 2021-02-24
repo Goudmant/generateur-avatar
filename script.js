@@ -38,11 +38,11 @@ window.onload = function()
         avatarNose.src=avatarNoseName;
 
         // BACKHAIR
-        //let u = 8; //number of Backhair
-        //let avatarBackhair = new Image();
-        //let avatarBackhairNum= Math.floor(Math.random()*u)+1;
-        //let avatarBackhairName = "assets/backhair/backhair" + avatarBackhairNum + ".png";
-        //avatarBackhair.src=avatarBackhairName;
+        let u = 8; //number of Backhair
+        let avatarBackhair = new Image();
+        let avatarBackhairNum= Math.floor(Math.random()*u)+1;
+        let avatarBackhairName = "assets/backhair/backhair" + avatarBackhairNum + ".png";
+        avatarBackhair.src=avatarBackhairName;
 
         // CLOTHING 
         let t = 9; //number of Clothings
@@ -82,10 +82,10 @@ window.onload = function()
         }
 
         //BACKHAIR LOADED
-        //avatarBackhair.onload=function()
-        //{
-        //    buildAvatar();
-        //}
+        avatarBackhair.onload=function()
+        {
+            buildAvatar();
+        }
 
         //NOSE LOADED
         avatarNose.onload=function()
@@ -105,7 +105,7 @@ window.onload = function()
             // Here we need to think about the ORDER in which we're going to put the parts of the images : HEAD first then EYES because they come in front : HEAD >>> EYES
 
             //DRAW BACKHAIR
-            //ctx.drawImage(avatarBackhair, ((800-avatarBackhair.width)/2),125);
+            ctx.drawImage(avatarBackhair, ((800-avatarBackhair.width)/2),125);
 
             // DRAW HEAD
             ctx.drawImage(avatarHead, ((800-avatarHead.width)/2),125); // center elements horizontally - x axis, then y axis
