@@ -38,7 +38,7 @@ window.onload = function()
         avatarNose.src=avatarNoseName;
 
         // BACKHAIR
-        let u = 8; //number of Backhair
+        let u = 16; //number of Backhair
         let avatarBackhair = new Image();
         let avatarBackhairNum= Math.floor(Math.random()*u)+1;
         let avatarBackhairName = "assets/backhair/backhair" + avatarBackhairNum + ".png";
