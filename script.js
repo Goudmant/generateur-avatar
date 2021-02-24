@@ -4,6 +4,7 @@ window.onload = function()
         // HEAD
         let x = 6; // number of heads 
         let avatarHead = new Image();
+            //let avatarHeadStyle = randomColor({hue: 'red', count: 18});
         let avatarHeadNum= Math.floor(Math.random()*x)+1;
         let avatarHeadName = "assets/head/head" + avatarHeadNum + ".png"; 
         avatarHead.src=avatarHeadName;
@@ -53,7 +54,7 @@ window.onload = function()
         // HEAD LOADED
         avatarHead.onload=function()
         {
-                buildAvatar();
+            buildAvatar();
         }
 
         // EYES LOADED
@@ -108,6 +109,7 @@ window.onload = function()
 
             // DRAW HEAD
             ctx.drawImage(avatarHead, ((800-avatarHead.width)/2),125); // center elements horizontally - x axis, then y axis
+            //ctx.avatarHeadStyle=newColor;
 
             // DRAW HAIR
             ctx.drawImage(avatarHair, ((800-avatarHair.width)/2),25);
