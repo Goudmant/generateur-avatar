@@ -7,6 +7,7 @@ Resources :
   <li>Svelte for VS Code : https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode</li>
   <li>pré-traitement svelte</li>
   <li>Vérifiez votre code avec svelte-check</li>
+  <li>http://morganridel.fr/generer-des-couleurs-aleatoires-en-javascript</li>
 </ul>
 
 Téléchargements : 
