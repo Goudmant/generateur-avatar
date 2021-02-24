@@ -5,7 +5,7 @@ window.onload = function()
         let x = 6; // number of heads 
         let avatarHead = new Image();
         let avatarHeadNum= Math.floor(Math.random()*x)+1;
-        let avatarHeadName = "assets/head/head" + avatarHeadNum + ".png";
+        let avatarHeadName = "assets/head/head" + avatarHeadNum + ".png"; 
         avatarHead.src=avatarHeadName;
 
         // EYES
