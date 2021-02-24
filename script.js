@@ -16,7 +16,7 @@ window.onload = function()
         avatarEyes.src=avatarEyesName;
 
         // MOUTH
-        let z = 32; // number of mouths
+        let z = 34; // number of mouths
         let avatarMouth = new Image();
         let avatarMouthNum= Math.floor(Math.random()*z)+1;
         let avatarMouthName = "assets/mouth/mouth" + avatarMouthNum + ".png";
@@ -30,18 +30,25 @@ window.onload = function()
         avatarHair.src=avatarHairName;
 
         // NOSE 
-        let w = 7; //number of noses
+        let w = 8; //number of noses
         let avatarNose = new Image();
         let avatarNoseNum= Math.floor(Math.random()*w)+1;
         let avatarNoseName = "assets/nose/nose" + avatarNoseNum + ".png";
         avatarNose.src=avatarNoseName;
 
         // BACKHAIR
-        let h = 8; //number of Backhair
+        let u = 8; //number of Backhair
         let avatarBackhair = new Image();
-        let avatarBackhairNum= Math.floor(Math.random()*h)+1;
+        let avatarBackhairNum= Math.floor(Math.random()*u)+1;
         let avatarBackhairName = "assets/backhair/backhair" + avatarBackhairNum + ".png";
         avatarBackhair.src=avatarBackhairName;
+
+        // CLOTHING 
+        let t = 9, //number of Clothings
+        let avatarClothing = new Image();
+        let avatarClothingNum = Math.floor(Math.random()*t)+1;
+        let avatarClothingName = "assets/clothing/clothing" + avatarClothingNum + ".png";
+        avatarClothing.src=avatarClothingName;
 
         // HEAD LOADED
         avatarHead.onload=function()
@@ -54,7 +61,13 @@ window.onload = function()
         {
             buildAvatar(); // if you don't build the robot each time a single element is loaded, you might end up with elements not showing up (server error, image size etc) - light function
         }     
-            
+        
+        // CLOTHING LOADED
+        avatarClothing.onload=function()
+        {
+            buildAvatar();
+        }
+
         // MOUTH LOADED
         avatarMouth.onload=function()
         {
@@ -107,6 +120,9 @@ window.onload = function()
             
             //DRAW NOSE
             ctx.drawImage(avatarNose, ((1000-avatarNose.width)/2),300);
+
+            // DRAW CLOTHING
+            ctx.drawImage(avatarClothing, ((1000-avatarClothing.width)/2),650);
 
         }
     }
