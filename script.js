@@ -37,11 +37,11 @@ window.onload = function()
         avatarNose.src=avatarNoseName;
 
         // BACKHAIR
-        let u = 8; //number of Backhair
-        let avatarBackhair = new Image();
-        let avatarBackhairNum= Math.floor(Math.random()*u)+1;
-        let avatarBackhairName = "assets/backhair/backhair" + avatarBackhairNum + ".png";
-        avatarBackhair.src=avatarBackhairName;
+        //let u = 8; //number of Backhair
+        //let avatarBackhair = new Image();
+        //let avatarBackhairNum= Math.floor(Math.random()*u)+1;
+        //let avatarBackhairName = "assets/backhair/backhair" + avatarBackhairNum + ".png";
+        //avatarBackhair.src=avatarBackhairName;
 
         // CLOTHING 
         let t = 9; //number of Clothings
@@ -81,10 +81,10 @@ window.onload = function()
         }
 
         //BACKHAIR LOADED
-        avatarBackhair.onload=function()
-        {
-            buildAvatar();
-        }
+        //avatarBackhair.onload=function()
+        //{
+        //    buildAvatar();
+        //}
 
         //NOSE LOADED
         avatarNose.onload=function()
@@ -97,32 +97,32 @@ window.onload = function()
         {
             let canvas = document.getElementById('canvas');
             let ctx = canvas.getContext('2d');
-            canvas.width=1000;
-            canvas.height=1000;
+            canvas.width=800;
+            canvas.height=800;
 
             // DRAW
             // Here we need to think about the ORDER in which we're going to put the parts of the images : HEAD first then EYES because they come in front : HEAD >>> EYES
 
             //DRAW BACKHAIR
-            ctx.drawImage(avatarBackhair, ((1000-avatarBackhair.width)/2),125);
+            //ctx.drawImage(avatarBackhair, ((800-avatarBackhair.width)/2),125);
 
             // DRAW HEAD
-            ctx.drawImage(avatarHead, ((1000-avatarHead.width)/2),125); // center elements horizontally - x axis, then y axis
+            ctx.drawImage(avatarHead, ((800-avatarHead.width)/2),125); // center elements horizontally - x axis, then y axis
 
             // DRAW HAIR
-            ctx.drawImage(avatarHair, ((1000-avatarHair.width)/2),40);
+            ctx.drawImage(avatarHair, ((800-avatarHair.width)/2),25);
             
             // DRAW EYES
-            ctx.drawImage(avatarEyes, ((1000-avatarEyes.width)/2),300); 
+            ctx.drawImage(avatarEyes, ((800-avatarEyes.width)/2),300); 
         
             // DRAW MOUTH
-            ctx.drawImage(avatarMouth, ((1000-avatarMouth.width)/2),500);
+            ctx.drawImage(avatarMouth, ((800-avatarMouth.width)/2),520);
             
             //DRAW NOSE
-            ctx.drawImage(avatarNose, ((1000-avatarNose.width)/2),350);
+            ctx.drawImage(avatarNose, ((800-avatarNose.width)/2),350);
 
             // DRAW CLOTHING
-            ctx.drawImage(avatarClothing, ((1000-avatarClothing.width)/2),710);
+            ctx.drawImage(avatarClothing, ((800-avatarClothing.width)/2),710);
 
         }
     }
