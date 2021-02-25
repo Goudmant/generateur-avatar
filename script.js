@@ -10,11 +10,11 @@ window.onload = function()
         avatarHead.src=avatarHeadName;
 
         // BACKGROUND 
-        let s = 24; // number of background 
-        let avatarBackground = new Image();
-        let avatarBackgroundNum= Math.floor(Math.random()*s)+1; 
-        let avatarBackgroundName = "assets/background/background" + avatarBackgroundNum + ".png";
-        avatarBackground.src=avatarBackgroundName;
+        //let s = 24; // number of background 
+        //let avatarBackground = new Image();
+        //let avatarBackgroundNum= Math.floor(Math.random()*s)+1; 
+        //let avatarBackgroundName = "assets/background/background" + avatarBackgroundNum + ".png";
+        //avatarBackground.src=avatarBackgroundName;
 
         // EYES
         let y = 27; // number of pair of eyes 
@@ -65,10 +65,10 @@ window.onload = function()
         }
 
         // BACKGROUND
-        avatarBackground.onload=function()
-        {
-            buildAvatar();
-        }
+        //avatarBackground.onload=function()
+        //{
+        //    buildAvatar();
+        //}
 
         // EYES LOADED
         avatarEyes.onload=function()
@@ -125,7 +125,7 @@ window.onload = function()
             //ctx.avatarHeadStyle=newColor;
 
             // DRAW BACKGROUND
-            ctx.drawImage(avatarBackground, ((800-avatarBackground.width)/2),0);
+            //ctx.drawImage(avatarBackground, ((800-avatarBackground.width)/2),-50);
 
             // DRAW HAIR
             ctx.drawImage(avatarHair, ((800-avatarHair.width)/2),25);
@@ -144,3 +144,22 @@ window.onload = function()
 
         }
     }
+
+    function randomColor(){
+        var color = "#";
+        var randomHex = "123456ABCDEF";  
+        for(var i = 0; i<6;i++){
+            color+= randomHex[Math.floor(Math.random()*16)]
+        }
+       
+        return color;
+    }
+    
+    var mytimer ;
+    
+    function setColor(){
+        
+        $("body").css("background-color", randomColor);
+    }
+    
+    var mytimer = setInterval(setColor, .8000);

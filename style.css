@@ -1,0 +1,11 @@
+canvas#canvas.background-color {
+  background-color: 5;
+}
+
+button {
+  background-color: 16;
+  padding: 1rem 2rem;
+  text-align: center;
+  font-family: 'Anton', sans-serif;
+}
+/*# sourceMappingURL=style.css.map */
