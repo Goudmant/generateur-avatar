@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Avatar Maker</title>
+
+    <style>
+
+        .slider {
+            margin:50px;
+            width:50%;
+        }
+
+        .hair-box img{
+            width:50%;
+            position:relative;
+        }
+
+        .head-box img {
+            width:50%;
+            position: relative;
+        }
+
+        .btn {
+            border:none;
+            outline:none;
+            background:#aeaeae;
+            padding:10px 30px;
+            font-size:1rem;
+            color:rgb(255, 255, 255);
+            cursor:pointer;
+            margin:10px auto;
+        }
+
+        .btn:hover{
+            background:#111;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- PREVIOUS & NEXT BTN -->
+    
+    <button class="btn" onclick="prev()"><<<</button>
+    <button class="btn" onclick="next()">>>></button>
+
+
+    <!-- IMAGE SLIDER -->
+
+    <div class="slider">
+        <div class="hair-box">
+            <img src="./assets/hair/hair1.png" alt="" class="slider-img" />
+        </div>
+        <div class="head-box">
+            <img src="./assets/head/head1.png" alt="">
+        </div>
+    </div>
+    <div align="center">
+        <canvas id="canvas" height="800" width="800" style="border: 5px solid #000000;"></canvas>
+        <br><br>
+        <button onClick="window.location.reload();">FULL RANDOM</button>
+        <!-- window location : web page we're in right now -->
+    </div>
+
+    <script src="./scripts/slider.js"></script>
+</body>
+</html>
