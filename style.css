@@ -1,10 +1,8 @@
 canvas {
   display: block;
-  background-color: black;
 }
 
 button {
-  background-color: 10;
   padding: 1rem 2rem;
   text-align: center;
   font-family: 'Anton', sans-serif;

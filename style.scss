@@ -1,11 +1,9 @@
 canvas {
     display : block;
 
-    background-color : black;
 }
 
 button {
-    background-color: random($limit: 16);
     padding: 1rem 2rem;
     text-align: center;
     font-family: 'Anton', sans-serif;
