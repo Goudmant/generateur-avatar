@@ -9,6 +9,13 @@ window.onload = function()
         let avatarHeadName = "assets/head/head" + avatarHeadNum + ".png"; 
         avatarHead.src=avatarHeadName;
 
+        // BACKGROUND 
+        let s = 24; // number of background 
+        let avatarBackground = new Image();
+        let avatarBackgroundNum= Math.floor(Math.random()*s)+1; 
+        let avatarBackgroundName = "assets/background/background" + avatarBackgroundNum + ".png";
+        avatarBackground.src=avatarBackgroundName;
+
         // EYES
         let y = 27; // number of pair of eyes 
         let avatarEyes = new Image();
@@ -53,6 +60,12 @@ window.onload = function()
 
         // HEAD LOADED
         avatarHead.onload=function()
+        {
+            buildAvatar();
+        }
+
+        // BACKGROUND
+        avatarBackground.onload=function()
         {
             buildAvatar();
         }
@@ -110,6 +123,9 @@ window.onload = function()
             // DRAW HEAD
             ctx.drawImage(avatarHead, ((800-avatarHead.width)/2),125); // center elements horizontally - x axis, then y axis
             //ctx.avatarHeadStyle=newColor;
+
+            // DRAW BACKGROUND
+            ctx.drawImage(avatarBackground, ((800-avatarBackground.width)/2),0);
 
             // DRAW HAIR
             ctx.drawImage(avatarHair, ((800-avatarHair.width)/2),25);
