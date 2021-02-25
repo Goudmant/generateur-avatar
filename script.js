@@ -144,6 +144,7 @@ window.onload = function()
 
         }
     }
+
 window.addEventListener("load", function setupWebGL (evt) {
         "use strict"
         // On fait le ménage : le gestionnaire se supprime lui-
@@ -161,18 +162,18 @@ function switchColor () {
   // Si elle n'est pas définie, on récupère WebGLRenderingContext.
   // Si cela échoue, on avertit l'utilisateur. Sinon, on
   // initialise la zone de dessin (viewport)
-  if (!gl) {
-    gl = canvas.getContext("webgl")
-      || canvas.getContext("experimental-webgl");
     if (!gl) {
-      alert("Échec de la récupération du \n"
+    gl = canvas.getContext("webgl")
+        || canvas.getContext("experimental-webgl");
+    if (!gl) {
+        alert("Échec de la récupération du \n"
         + "contexte WebGL. Votre navigateur peut ne pas \n"
         + " supporter WebGL.");
-      return;
+        return;
     }
     gl.viewport(0, 0,
-      gl.drawingBufferWidth, gl.drawingBufferHeight);
-  }
+        gl.drawingBufferWidth, gl.drawingBufferHeight);
+}
 
   // On obtient une couleur aléatoire grâce
   // à une fonction auxiliaire.
