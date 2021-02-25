@@ -2,7 +2,7 @@ window.onload = function()
     {
 
         // HEAD
-        let x = 6; // number of heads 
+        let x = 46; // number of heads 
         let avatarHead = new Image();
             //let avatarHeadStyle = randomColor({hue: 'red', count: 18});
         let avatarHeadNum= Math.floor(Math.random()*x)+1;
