@@ -26,7 +26,7 @@ function randomColor(){
     var color = "#";
     var randomHex = "123456ABCDEF";  
     for(var i = 0; i<6;i++){
-        color+= randomHex[Math.floor(Math.random()*35)]
+        color+= randomHex[Math.floor(Math.random()*40)]
     }
 
     return color;
@@ -39,5 +39,5 @@ function setColor(){
     $("canvas").css("background-color", randomColor);
 }
 
-var mytimer = setInterval(setColor, .8000);
+var mytimer = setInterval(setColor, .1);
 
