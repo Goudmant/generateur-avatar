@@ -146,7 +146,6 @@ window.onload = function()
     }
 window.addEventListener("load", function setupWebGL (evt) {
         "use strict"
-      
         // On fait le ménage : le gestionnaire se supprime lui-
         // même car il n'a besoin d'être exécuté qu'une fois.
         window.removeEventListener(evt.type, setupWebGL, false);
