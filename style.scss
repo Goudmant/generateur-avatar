@@ -1,6 +1,7 @@
-canvas#canvas.background-color {
-    background-color: random($limit: 10);
+canvas {
+    display : block;
 
+    background-color : black;
 }
 
 button {

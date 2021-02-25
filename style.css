@@ -1,9 +1,10 @@
-canvas#canvas.background-color {
-  background-color: 2;
+canvas {
+  display: block;
+  background-color: black;
 }
 
 button {
-  background-color: 16;
+  background-color: 10;
   padding: 1rem 2rem;
   text-align: center;
   font-family: 'Anton', sans-serif;

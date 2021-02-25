@@ -144,22 +144,53 @@ window.onload = function()
 
         }
     }
+window.addEventListener("load", function setupWebGL (evt) {
+        "use strict"
+      
+        // On fait le ménage : le gestionnaire se supprime lui-
+        // même car il n'a besoin d'être exécuté qu'une fois.
+        window.removeEventListener(evt.type, setupWebGL, false);
+var canvas = document.querySelector("#canvas-view");
+canvas.addEventListener("click", switchColor, false);
+// On crée une variable qui contiendra WebGLRenderingContext.
+var gl;
 
-    function randomColor(){
-        var color = "#";
-        var randomHex = "123456ABCDEF";  
-        for(var i = 0; i<6;i++){
-            color+= randomHex[Math.floor(Math.random()*16)]
-        }
-    
-        return color;
+// La déclaration du gestionnaire d'événement pour le clic.
+function switchColor () {
+
+  // On utilise la variable gl définie en dehors.
+  // Si elle n'est pas définie, on récupère WebGLRenderingContext.
+  // Si cela échoue, on avertit l'utilisateur. Sinon, on
+  // initialise la zone de dessin (viewport)
+  if (!gl) {
+    gl = canvas.getContext("webgl")
+      || canvas.getContext("experimental-webgl");
+    if (!gl) {
+      alert("Échec de la récupération du \n"
+        + "contexte WebGL. Votre navigateur peut ne pas \n"
+        + " supporter WebGL.");
+      return;
     }
-    
-    var mytimer ;
-    
-    function setColor(){
-        
-        $("body").css("background-color", randomColor);
-    }
-    
-    var mytimer = setInterval(setColor, .8000);
+    gl.viewport(0, 0,
+      gl.drawingBufferWidth, gl.drawingBufferHeight);
+  }
+
+  // On obtient une couleur aléatoire grâce
+  // à une fonction auxiliaire.
+  var color = getRandomColor();
+
+  // On choisit cette couleur comme couleur à appliquer.
+  gl.clearColor(color[0], color[1], color[2], 1.0);
+
+  // On applique la nouvelle couleur dans le contexte.
+  // C'est cette fonction qui effectue « réellement »
+  // le dessin sur la zone.
+  gl.clear(gl.COLOR_BUFFER_BIT);
+}
+
+// Une fonction auxiliaire pour créer une couleur aléatoire.
+function getRandomColor() {
+  return [Math.random(), Math.random(), Math.random()];
+}
+
+}, false);
