@@ -50,258 +50,47 @@
 import {
 	SvelteComponentDev,
 	add_location,
-	append_dev,
 	attr_dev,
-	destroy_each,
+	binding_callbacks,
 	detach_dev,
 	dispatch_dev,
 	element,
-	empty,
-	globals,
 	init,
 	insert_dev,
-	listen_dev,
 	noop,
-	run_all,
 	safe_not_equal,
-	set_data_dev,
-	space,
-	text,
-	validate_each_argument,
 	validate_slots
 } from "svelte/internal";
 
-const { console: console_1 } = globals;
+import { onMount } from "svelte";
 const file = "App.svelte";
 
-function get_each_context(ctx, list, i) {
-	const child_ctx = ctx.slice();
-	child_ctx[3] = list[i];
-	return child_ctx;
-}
-
-// (32:0) {#if files}
-function create_if_block(ctx) {
-	let h2;
-	let t1;
-	let each_1_anchor;
-	let each_value = Array.from(/*files*/ ctx[0]);
-	validate_each_argument(each_value);
-	let each_blocks = [];
-	
-
-	for (let i = 0; i < each_value.length; i += 1) {
-		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
-	}
-
-	const block = {
-		c: function create() {
-			h2 = element("h2");
-			h2.textContent = "Selected files:";
-			t1 = space();
-
-			for (let i = 0; i < each_blocks.length; i += 1) {
-				each_blocks[i].c();
-			}
-
-			each_1_anchor = empty();
-			add_location(h2, file, 32, 1, 558);
-		},
-		m: function mount(target, anchor) {
-			insert_dev(target, h2, anchor);
-			insert_dev(target, t1, anchor);
-
-			for (let i = 0; i < each_blocks.length; i += 1) {
-				each_blocks[i].m(target, anchor);
-			}
-
-			insert_dev(target, each_1_anchor, anchor);
-		},
-		p: function update(ctx, dirty) {
-			if (dirty & /*Array, files*/ 1) {
-				each_value = Array.from(/*files*/ ctx[0]);
-				validate_each_argument(each_value);
-				let i;
-
-				for (i = 0; i < each_value.length; i += 1) {
-					const child_ctx = get_each_context(ctx, each_value, i);
-
-					if (each_blocks[i]) {
-						each_blocks[i].p(child_ctx, dirty);
-					} else {
-						each_blocks[i] = create_each_block(child_ctx);
-						each_blocks[i].c();
-						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
-					}
-				}
-
-				for (; i < each_blocks.length; i += 1) {
-					each_blocks[i].d(1);
-				}
-
-				each_blocks.length = each_value.length;
-			}
-		},
-		d: function destroy(detaching) {
-			if (detaching) detach_dev(h2);
-			if (detaching) detach_dev(t1);
-			destroy_each(each_blocks, detaching);
-			if (detaching) detach_dev(each_1_anchor);
-		}
-	};
-
-	dispatch_dev("SvelteRegisterBlock", {
-		block,
-		id: create_if_block.name,
-		type: "if",
-		source: "(32:0) {#if files}",
-		ctx
-	});
-
-	return block;
-}
-
-// (34:1) {#each Array.from(files) as file}
-function create_each_block(ctx) {
-	let p;
-	let t0_value = /*file*/ ctx[3].name + "";
-	let t0;
-	let t1;
-	let t2_value = /*file*/ ctx[3].size + "";
-	let t2;
-	let t3;
-
-	const block = {
-		c: function create() {
-			p = element("p");
-			t0 = text(t0_value);
-			t1 = text(" (");
-			t2 = text(t2_value);
-			t3 = text(" bytes) ");
-			add_location(p, file, 34, 2, 620);
-		},
-		m: function mount(target, anchor) {
-			insert_dev(target, p, anchor);
-			append_dev(p, t0);
-			append_dev(p, t1);
-			append_dev(p, t2);
-			append_dev(p, t3);
-		},
-		p: function update(ctx, dirty) {
-			if (dirty & /*files*/ 1 && t0_value !== (t0_value = /*file*/ ctx[3].name + "")) set_data_dev(t0, t0_value);
-			if (dirty & /*files*/ 1 && t2_value !== (t2_value = /*file*/ ctx[3].size + "")) set_data_dev(t2, t2_value);
-		},
-		d: function destroy(detaching) {
-			if (detaching) detach_dev(p);
-		}
-	};
-
-	dispatch_dev("SvelteRegisterBlock", {
-		block,
-		id: create_each_block.name,
-		type: "each",
-		source: "(34:1) {#each Array.from(files) as file}",
-		ctx
-	});
-
-	return block;
-}
-
 function create_fragment(ctx) {
-	let label0;
-	let t1;
-	let input0;
-	let t2;
-	let label1;
-	let t4;
-	let input1;
-	let t5;
-	let if_block_anchor;
-	let mounted;
-	let dispose;
-	let if_block = /*files*/ ctx[0] && create_if_block(ctx);
+	let canvas_1;
+	let canvas_1_width_value;
+	let canvas_1_height_value;
 
 	const block = {
 		c: function create() {
-			label0 = element("label");
-			label0.textContent = "Upload a picture:";
-			t1 = space();
-			input0 = element("input");
-			t2 = space();
-			label1 = element("label");
-			label1.textContent = "Upload multiple files of any type:";
-			t4 = space();
-			input1 = element("input");
-			t5 = space();
-			if (if_block) if_block.c();
-			if_block_anchor = empty();
-			attr_dev(label0, "for", "avatar");
-			add_location(label0, file, 14, 0, 285);
-			attr_dev(input0, "accept", "image/png, image/jpeg");
-			attr_dev(input0, "id", "avatar");
-			attr_dev(input0, "name", "avatar");
-			attr_dev(input0, "type", "file");
-			add_location(input0, file, 15, 0, 331);
-			attr_dev(label1, "for", "many");
-			add_location(label1, file, 23, 0, 427);
-			attr_dev(input1, "id", "many");
-			input1.multiple = true;
-			attr_dev(input1, "type", "file");
-			add_location(input1, file, 24, 0, 488);
+			canvas_1 = element("canvas");
+			attr_dev(canvas_1, "width", canvas_1_width_value = 32);
+			attr_dev(canvas_1, "height", canvas_1_height_value = 32);
+			attr_dev(canvas_1, "class", "svelte-7wnteg");
+			add_location(canvas_1, file, 50, 0, 1074);
 		},
 		l: function claim(nodes) {
 			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
 		},
 		m: function mount(target, anchor) {
-			insert_dev(target, label0, anchor);
-			insert_dev(target, t1, anchor);
-			insert_dev(target, input0, anchor);
-			insert_dev(target, t2, anchor);
-			insert_dev(target, label1, anchor);
-			insert_dev(target, t4, anchor);
-			insert_dev(target, input1, anchor);
-			insert_dev(target, t5, anchor);
-			if (if_block) if_block.m(target, anchor);
-			insert_dev(target, if_block_anchor, anchor);
-
-			if (!mounted) {
-				dispose = [
-					listen_dev(input0, "change", /*input0_change_handler*/ ctx[1]),
-					listen_dev(input1, "change", /*input1_change_handler*/ ctx[2])
-				];
-
-				mounted = true;
-			}
+			insert_dev(target, canvas_1, anchor);
+			/*canvas_1_binding*/ ctx[1](canvas_1);
 		},
-		p: function update(ctx, [dirty]) {
-			if (/*files*/ ctx[0]) {
-				if (if_block) {
-					if_block.p(ctx, dirty);
-				} else {
-					if_block = create_if_block(ctx);
-					if_block.c();
-					if_block.m(if_block_anchor.parentNode, if_block_anchor);
-				}
-			} else if (if_block) {
-				if_block.d(1);
-				if_block = null;
-			}
-		},
+		p: noop,
 		i: noop,
 		o: noop,
 		d: function destroy(detaching) {
-			if (detaching) detach_dev(label0);
-			if (detaching) detach_dev(t1);
-			if (detaching) detach_dev(input0);
-			if (detaching) detach_dev(t2);
-			if (detaching) detach_dev(label1);
-			if (detaching) detach_dev(t4);
-			if (detaching) detach_dev(input1);
-			if (detaching) detach_dev(t5);
-			if (if_block) if_block.d(detaching);
-			if (detaching) detach_dev(if_block_anchor);
-			mounted = false;
-			run_all(dispose);
+			if (detaching) detach_dev(canvas_1);
+			/*canvas_1_binding*/ ctx[1](null);
 		}
 	};
 
@@ -319,48 +108,62 @@ function create_fragment(ctx) {
 function instance($$self, $$props, $$invalidate) {
 	let { $$slots: slots = {}, $$scope } = $$props;
 	validate_slots("App", slots, []);
-	let files;
+	let canvas;
+
+	onMount(() => {
+		const ctx = canvas.getContext("2d");
+		let frame;
+
+		(function loop() {
+			frame = requestAnimationFrame(loop);
+			const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+			for (let p = 0; p < imageData.data.length; p += 4) {
+				const i = p / 4;
+				const x = i % canvas.width;
+				const y = i / canvas.height >>> 0;
+				const t = window.performance.now();
+				const r = 64 + 128 * x / canvas.width + 64 * Math.sin(t / 1000);
+				const g = 64 + 128 * y / canvas.height + 64 * Math.cos(t / 1400);
+				const b = 128;
+				imageData.data[p + 0] = r;
+				imageData.data[p + 1] = g;
+				imageData.data[p + 2] = b;
+				imageData.data[p + 3] = 255;
+			}
+
+			ctx.putImageData(imageData, 0, 0);
+		})();
+
+		return () => {
+			cancelAnimationFrame(frame);
+		};
+	});
+
 	const writable_props = [];
 
 	Object.keys($$props).forEach(key => {
-		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1.warn(`<App> was created with unknown prop '${key}'`);
+		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<App> was created with unknown prop '${key}'`);
 	});
 
-	function input0_change_handler() {
-		files = this.files;
-		$$invalidate(0, files);
+	function canvas_1_binding($$value) {
+		binding_callbacks[$$value ? "unshift" : "push"](() => {
+			canvas = $$value;
+			$$invalidate(0, canvas);
+		});
 	}
 
-	function input1_change_handler() {
-		files = this.files;
-		$$invalidate(0, files);
-	}
-
-	$$self.$capture_state = () => ({ files });
+	$$self.$capture_state = () => ({ onMount, canvas });
 
 	$$self.$inject_state = $$props => {
-		if ("files" in $$props) $$invalidate(0, files = $$props.files);
+		if ("canvas" in $$props) $$invalidate(0, canvas = $$props.canvas);
 	};
 
 	if ($$props && "$$inject" in $$props) {
 		$$self.$inject_state($$props.$$inject);
 	}
 
-	$$self.$$.update = () => {
-		if ($$self.$$.dirty & /*files*/ 1) {
-			$: if (files) {
-				// Note that `files` is of type `FileList`, not an Array:
-				// https://developer.mozilla.org/en-US/docs/Web/API/FileList
-				console.log(files);
-
-				for (const file of files) {
-					console.log(`${file.name}: ${file.size} bytes`);
-				}
-			}
-		}
-	};
-
-	return [files, input0_change_handler, input1_change_handler];
+	return [canvas, canvas_1_binding];
 }
 
 class App extends SvelteComponentDev {
