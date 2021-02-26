@@ -31,14 +31,14 @@ window.onload = function()
         avatarMouth.src=avatarMouthName; 
         
         // HAIR
-        let v = 8; //number of haircups
+        let v = 9; //number of haircups
         let avatarHair = new Image();
         let avatarHairNum= Math.floor(Math.random()*v)+1;
         let avatarHairName = "assets/hair/hair" + avatarHairNum + ".png";
         avatarHair.src=avatarHairName;
 
         // NOSE 
-        let w = 8; //number of noses
+        let w = 13; //number of noses
         let avatarNose = new Image();
         let avatarNoseNum= Math.floor(Math.random()*w)+1;
         let avatarNoseName = "assets/nose/nose" + avatarNoseNum + ".png";
@@ -52,7 +52,7 @@ window.onload = function()
         avatarBackhair.src=avatarBackhairName;
 
         // CLOTHING 
-        let t = 9; //number of Clothings
+        let t = 11; //number of Clothings
         let avatarClothing = new Image();
         let avatarClothingNum = Math.floor(Math.random()*t)+1;
         let avatarClothingName = "assets/clothing/clothing" + avatarClothingNum + ".png";
