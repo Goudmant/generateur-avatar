@@ -45,10 +45,10 @@ window.onload = function()
         avatarNose.src=avatarNoseName;
 
         // MASK
-        let r = 1; // number of mask 
+        let r = 8; // number of mask 
         let avatarMask = new Image();
         let avatarMaskNum = Math.floor(Math.random()*r)+1;
-        let avatarMaskName = "assets/mask/mask" + avatarBackhairNum + ".png";
+        let avatarMaskName = "assets/mask/mask" + avatarMaskNum + ".png";
         avatarMask.src=avatarMaskName;
 
         // BACKHAIR
@@ -70,12 +70,6 @@ window.onload = function()
         {
             buildAvatar();
         }
-
-        // BACKGROUND
-        //avatarBackground.onload=function()
-        //{
-        //    buildAvatar();
-        //}
 
         // EYES LOADED
         avatarEyes.onload=function()
@@ -135,10 +129,6 @@ window.onload = function()
 
             // DRAW HEAD
             ctx.drawImage(avatarHead, ((800-avatarHead.width)/2),125); // center elements horizontally - x axis, then y axis
-            //ctx.avatarHeadStyle=newColor;
-
-            // DRAW BACKGROUND
-            //ctx.drawImage(avatarBackground, ((800-avatarBackground.width)/2),-50);
 
             // DRAW HAIR
             ctx.drawImage(avatarHair, ((800-avatarHair.width)/2),25);
@@ -153,7 +143,7 @@ window.onload = function()
             ctx.drawImage(avatarNose, ((800-avatarNose.width)/2),350);
 
             //DRAW MASK
-            ctx.drawImage(avatarMask, ((800-avatarMask.width)/2),300);
+            ctx.drawImage(avatarMask, ((800-avatarMask.width)/2),450);
 
             // DRAW CLOTHING
             ctx.drawImage(avatarClothing, ((800-avatarClothing.width)/2),700);
