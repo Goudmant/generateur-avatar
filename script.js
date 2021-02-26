@@ -44,6 +44,13 @@ window.onload = function()
         let avatarNoseName = "assets/nose/nose" + avatarNoseNum + ".png";
         avatarNose.src=avatarNoseName;
 
+        // MASK
+        let r = 1; // number of mask 
+        let avatarMask = new Image();
+        let avatarMaskNum = Math.floor(Math.random()*r)+1;
+        let avatarMaskName = "assets/mask/mask" + avatarBackhairNum + ".png";
+        avatarMask.src=avatarMaskName;
+
         // BACKHAIR
         let u = 16; //number of Backhair
         let avatarBackhair = new Image();
@@ -106,6 +113,12 @@ window.onload = function()
             buildAvatar();
         }
 
+        //MASK LOADED
+        avatarMask.onload=function()
+        {
+            buildAvatar();
+        }
+
         // BUILDING THE AVATAR - THE LAST AIRBENDER
         function buildAvatar()
         {
@@ -138,6 +151,9 @@ window.onload = function()
             
             //DRAW NOSE
             ctx.drawImage(avatarNose, ((800-avatarNose.width)/2),350);
+
+            //DRAW MASK
+            ctx.drawImage(avatarMask, ((800-avatarMask.width)/2),300);
 
             // DRAW CLOTHING
             ctx.drawImage(avatarClothing, ((800-avatarClothing.width)/2),700);
