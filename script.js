@@ -45,7 +45,7 @@ window.onload = function()
         avatarNose.src=avatarNoseName;
 
         // MASK
-        let r = 8; // number of mask 
+        let r = 9; // number of mask 
         let avatarMask = new Image();
         let avatarMaskNum = Math.floor(Math.random()*r)+1;
         let avatarMaskName = "assets/mask/mask" + avatarMaskNum + ".png";
