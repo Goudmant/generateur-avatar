@@ -143,7 +143,7 @@ window.onload = function()
             ctx.drawImage(avatarNose, ((800-avatarNose.width)/2),350);
 
             //DRAW MASK
-            ctx.drawImage(avatarMask, ((800-avatarMask.width)/2),450);
+            ctx.drawImage(avatarMask, ((800-avatarMask.width)/2),480);
 
             // DRAW CLOTHING
             ctx.drawImage(avatarClothing, ((800-avatarClothing.width)/2),700);
