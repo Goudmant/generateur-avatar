@@ -115,9 +115,10 @@ function instance($$self, $$props, $$invalidate) {
 	let { $$slots: slots = {}, $$scope } = $$props;
 	validate_slots("undefined", slots, []);
 	let canvas;
-	let $$scope = $$scope;
+
 
 	onMount(() => {
+
 		const ctx = canvas.getContext("2d");
 		let frame;
 
