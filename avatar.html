@@ -15,8 +15,40 @@
     <div align="center">
         <canvas id="canvas" height="800" width="800" style="border: 5px solid #000000;"></canvas>
         <br><br>
-        <button onClick="window.location.reload();">FULL RANDOM</button>
+        <!--<button onClick="window.location.reload();">FULL RANDOM</button> -->
         <!-- window location : web page we're in right now -->
+        <script>
+            import CustomButton from './CustomButton.svelte';
+        
+            function handleClick() {
+                alert('clicked');
+            }
+        </script>
+        
+        <CustomButton on:click={handleClick}/> 
+
+        <style>
+            button {
+                height: 4rem;
+                width: 8rem;
+                background-color: #aaa;
+                border-color: #f1c40f;
+                color: #f1c40f;
+                font-size: 1rem;
+                background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+                background-position: 100%;
+                background-size: 400%;
+                transition: background 300ms ease-in-out;
+            }
+            button:hover {
+                background-position: 0;
+                color: #aaa;
+            }
+        </style>
+        
+        <button on:click>
+            FULL RANDOM
+        </button>
     </div>
 
 
