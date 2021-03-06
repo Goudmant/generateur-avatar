@@ -24,10 +24,12 @@
     <div>
         <script>
             import CustomButton from './CustomButton.svelte';
-        
+            
+
             function handleClick() {
                 alert('clicked');
             }
+
         </script>
     <!--Button generateur d'avatar random END-->
         <CustomButton onClick="window.location.reload();" on:click={handleClick}/> 
