@@ -51,19 +51,19 @@ window.onload = function () {
 	function buildAvatar() {
 		let canvas = document.getElementById("canvas");
 		let ctx = canvas.getContext("2d");
-		canvas.width = 400;
-		canvas.height = 400;
+		canvas.width = 800;
+		canvas.height = 800;
 
 		// DRAW
 		// Here we need to think about the ORDER in which we're going to put the parts of the images : HEAD first then EYES because they come in front : HEAD >>> EYES
 
 		// DRAW HEAD
-		ctx.drawImage(avatarHead, (400 - avatarHead.width) / 2, 50); // center elements horizontally - x axis, then y axis
+		ctx.drawImage(avatarHead, (800 - avatarHead.width) / 2, 50); // center elements horizontally - x axis, then y axis
 
 		// DRAW EYES
-		ctx.drawImage(avatarEyes, (400 - avatarEyes.width) / 2, 30);
+		ctx.drawImage(avatarEyes, (800 - avatarEyes.width) / 2, 30);
 
-		// DRAW EYES
-		ctx.drawImage(avatarMouth, (400 - avatarMouth.width) / 2, 60);
+		// DRAW MOUTH
+		ctx.drawImage(avatarMouth, (800 - avatarMouth.width) / 2, 60);
 	}
 };
