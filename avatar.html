@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <title>Avatar Generator</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 </head>
 <body>
     <!--Canvas Avatar START-->
@@ -16,8 +16,9 @@
         <canvas id="canvas" height="800" width="800" style="border: 5px solid #000000;"></canvas>
     </div>
     <!--Canvas Avatar END-->
-        <br><br>
-        <!--<button onClick="window.location.reload();">FULL RANDOM</button> --> <!--bouton principal random en com pour le cree en svelte-->
+        <div align="center">
+            <!--<button onClick="window.location.reload();">FULL RANDOM</button> --> <!--bouton principal random en com pour le cree en svelte-->
+        </div>
         <!-- window location : web page we're in right now -->
         
     <!--Button generateur d'avatar random START-->
@@ -41,24 +42,26 @@
             button {
                 height: 4rem;
                 width: 8rem;
-                background-color: #aaa;
-                border-color: #f1c40f;
-                color: #f1c40f;
-                font-size: 0.90rem;
-                background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+                background-color: #ffff;
+                border-color: #000000;
+                color: #000000;
+                font-size: 1.25rem;
+                background-image: linear-gradient(45deg, #005DFF 50%, transparent 50%);
                 background-position: 100%;
                 background-size: 400%;
-                transition: background 300ms ease-in-out;
+                transition: background 500ms ease-in-out;
             }
-            button:hover {
+                button:hover {
                 background-position: 0;
-                color: #aaa;
+                color: #ffffff;
             }
         </style>
         <!--Button generateur d'avatar STYLE END-->
-        <button on:click>
-            RANDOM
-        </button>
+        <div align="center">
+            <button on:click>
+                RANDOM
+            </button>
+        </div>
     </div>
 
 <!--<script src="backgroundcolor.js"></script>-->
