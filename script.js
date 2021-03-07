@@ -109,8 +109,7 @@ window.onload = function () {
 	function buildAvatar() {
 		let canvas = document.getElementById("canvas");
 		let ctx = canvas.getContext("2d");
-		canvas.width = 800;
-		canvas.height = 800;
+
 
 		// DRAW
 		// Here we need to think about the ORDER in which we're going to put the parts of the images : HEAD first then EYES because they come in front : HEAD >>> EYES
