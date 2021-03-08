@@ -15,7 +15,7 @@ window.onload = function () {
 	//avatarBackground.src=avatarBackgroundName;
 
 	// EYES
-	let y = 27; // number of pair of eyes
+	let y = 42; // number of pair of eyes
 	let avatarEyes = new Image();
 	let avatarEyesNum = Math.floor(Math.random() * y) + 1;
 	let avatarEyesName = "assets/eyes/eyes" + avatarEyesNum + ".png";
@@ -43,7 +43,7 @@ window.onload = function () {
 	avatarNose.src = avatarNoseName;
 
 	// MASK
-	let r = 9; // number of mask
+	let r = 11; // number of mask
 	let avatarMask = new Image();
 	let avatarMaskNum = Math.floor(Math.random() * r) + 1;
 	let avatarMaskName = "assets/mask/mask" + avatarMaskNum + ".png";
