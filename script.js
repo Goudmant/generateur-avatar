@@ -1,11 +1,11 @@
 window.onload = function () {
 	// HEAD
-	let x = 46; // number of heads
-	let avatarHead = new Image();
-	//let avatarHeadStyle = randomColor({hue: 'red', count: 18});
-	let avatarHeadNum = Math.floor(Math.random() * x) + 1;
-	let avatarHeadName = "assets/head/head" + avatarHeadNum + ".png";
-	avatarHead.src = avatarHeadName;
+	
+/*4*/	let x = 46; // number of heads
+/*1*/	let avatarHead = new Image();
+/*5*/	let avatarHeadNum = Math.floor(Math.random() * x) + 1;
+/*2*/	let avatarHeadName = "assets/head/head" + avatarHeadNum + ".png";
+/*3*/	avatarHead.src = avatarHeadName;
 
 	// BACKGROUND
 	//let s = 24; // number of background
