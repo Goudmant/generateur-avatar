@@ -29,7 +29,7 @@
  </ul>
  
  <ul>
-  <li><strong>Jultigin<strong></li>
+  <li><strong>Kultigin<strong></li>
  </ul>
 
 <strong>Présentation</strong>
@@ -49,7 +49,7 @@
  </ul>
  
  <ul>
-  <li><strong>Jultigin<strong></li>
+  <li><strong>Kultigin<strong></li>
  </ul>
 
 Téléchargements : node.js
@@ -59,6 +59,7 @@ Téléchargements : node.js
 
 Resources : 
 <ul>
+  <li>Google slide -Présentation de svelte https://docs.google.com/presentation/d/e/2PACX-1vQV5mt8NF118ERPRs8YEvk8CFDvxFKEbr_3sFGi5B0ovaL60Zhc9tYqUmQ3VyIN5ulRhAVrmyJE9nb0/pub?start=false&loop=false&delayms=3000</li>
   <li>https://svelte.dev/</li>
   <li>https://sapper.svelte.dev/</li>
   <li>Svelte for VS Code : https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode</li>
