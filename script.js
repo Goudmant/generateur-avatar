@@ -15,11 +15,18 @@ window.onload = function () {
 	//avatarBackground.src=avatarBackgroundName;
 
 	// EYES
-	let y = 42; // number of pair of eyes
+	let y = 43; // number of pair of eyes
 	let avatarEyes = new Image();
 	let avatarEyesNum = Math.floor(Math.random() * y) + 1;
 	let avatarEyesName = "assets/eyes/eyes" + avatarEyesNum + ".png";
 	avatarEyes.src = avatarEyesName;
+
+	//GLASSES
+	let s = 2;
+	let avatarGlasses = new Image();
+	let avatarGlassesNum = Math.floor(Math.random() * s) +1;
+	let avatarGlassesName = "assets/glasses/glasses" + avatarGlassesNum + ".png";
+	avatarGlasses.src = avatarGlassesName;
 
 	// MOUTH
 	let z = 34; // number of mouths
@@ -29,7 +36,7 @@ window.onload = function () {
 	avatarMouth.src = avatarMouthName;
 
 	// HAIR
-	let v = 9; //number of haircups
+	let v = 10; //number of haircups
 	let avatarHair = new Image();
 	let avatarHairNum = Math.floor(Math.random() * v) + 1;
 	let avatarHairName = "assets/hair/hair" + avatarHairNum + ".png";
@@ -43,7 +50,7 @@ window.onload = function () {
 	avatarNose.src = avatarNoseName;
 
 	// MASK
-	let r = 11; // number of mask
+	let r = 12; // number of mask
 	let avatarMask = new Image();
 	let avatarMaskNum = Math.floor(Math.random() * r) + 1;
 	let avatarMaskName = "assets/mask/mask" + avatarMaskNum + ".png";
@@ -105,6 +112,11 @@ window.onload = function () {
 		buildAvatar();
 	};
 
+	//GLASSES LOADES 
+	avatarGlasses.onload = function () {
+		buildAvatar();
+	};
+
 	// BUILDING THE AVATAR - THE LAST AIRBENDER
 	function buildAvatar() {
 		let canvas = document.getElementById("canvas");
@@ -125,6 +137,9 @@ window.onload = function () {
 
 		// DRAW EYES
 		ctx.drawImage(avatarEyes, (800 - avatarEyes.width) / 2, 300);
+
+		// DRAW GLASSES
+		ctx.drawImage(avatarGlasses, (800 - avatarGlasses.width)/2, 295);
 
 		// DRAW MOUTH
 		ctx.drawImage(avatarMouth, (800 - avatarMouth.width) / 2, 520);
